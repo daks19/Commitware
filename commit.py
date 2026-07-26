@@ -38,26 +38,20 @@ def main():
             time.sleep(1)
             
         except subprocess.CalledProcessError as e:
-            print(f"Git command failed. Are you in an initialized git repository?")
+            print("Git add/commit failed. Are you in an initialized git repository?")
             print(f"Error details: {e.stderr.decode('utf-8').strip()}")
-            break
+            return  # Exit the script early if committing fails
+
+    # 4. Push the new commits to the remote repository
+    print("\nPushing commits to remote repository...")
+    try:
+        subprocess.run(["git", "push"], check=True, capture_output=True)
+        print("Successfully pushed to remote!")
+    except subprocess.CalledProcessError as e:
+        print("Git push failed. Do you have a remote configured and an upstream branch set?")
+        print("You may need to run: git push -u origin <branch-name>")
+        print(f"Error details: {e.stderr.decode('utf-8').strip()}")
 
 if __name__ == "__main__":
     main()
-# Auto-generated string: wG5BdoeMeeVb
-# Auto-generated string: 0e4uZTJoIw9i
-# Auto-generated string: YU31wg2Lw4E6
-# Auto-generated string: OBlhmY5Oxh0s
-# Auto-generated string: UbBvOZZuEBG2
-# Auto-generated string: pMIKKxtwg5ry
-# Auto-generated string: KPB5315vTK66
-# Auto-generated string: ZFr5v6yaKp2k
-# Auto-generated string: SDhdVI5e2Iia
-# Auto-generated string: cJvap5XFROCi
-# Auto-generated string: 2vdAA4xiCCG9
-# Auto-generated string: Af2omHBFWRY4
-# Auto-generated string: IqcCCRpVUdU5
-# Auto-generated string: 8ebuKIt3dtj3
-# Auto-generated string: uQ3ThfuWXd9n
-# Auto-generated string: o11iEQt7whl7
-# Auto-generated string: 2NQ2r99amv7m
+# Auto-generated string: nQKxrhWusKwX
