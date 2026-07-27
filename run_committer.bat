@@ -2,13 +2,14 @@
 setlocal enabledelayedexpansion
 
 :: ==========================================
-:: CONFIGURATION: Update this path!
+:: CONFIGURATION: Updated for your directory
 :: ==========================================
-set "SCRIPT_DIR=C:\Your\Path\To\The\Repository"
-set "PYTHON_SCRIPT=auto_committer.py"
+set "SCRIPT_DIR=S:\Projects\Commitware"
+set "PYTHON_SCRIPT=committer.py"
 set "TRACKER_FILE=last_run_date.txt"
 
 :: Change directory to the repository folder
+:: Note: /d ensures it successfully switches drives (e.g., from C: to S:)
 cd /d "%SCRIPT_DIR%"
 
 :: Get today's date
