@@ -14,7 +14,7 @@ def main():
     script_path = os.path.abspath(__file__)
     
     # Randomly choose between 5 or 6 iterations
-    num_commits = random.randint(6,7)
+    num_commits = 1
     print(f"Starting {num_commits} automated commits for {os.path.basename(script_path)}...\n")
 
     for i in range(num_commits):
